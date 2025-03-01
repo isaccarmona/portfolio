@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio de Projetos</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            cursor: pointer;
+            height: 280px;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-image {
+            height: 180px;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .project-card:hover .card-image img {
+            transform: scale(1.1);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .card-description {
+            display: none;
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+            margin-top: 0.5rem;
+        }
+
+        .project-card:hover .card-description {
+            display: block;
+        }
+
+        .project-card:hover .card-tags {
+            display: none;
+        }
+
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .tag {
+            background-color: #f0f0f0;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            color: #555;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        /* Responsividade para dispositivos móveis */
+        @media (max-width: 768px) {
+            .projects {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meu Portfólio</h1>
+        <p class="subtitle">Desenvolvedor Web & Designer</p>
+    </header>
+
+    <div class="container">
+        <div class="projects">
+            <!-- Projeto 1 -->
+            <div class="project-card" onclick="navigateToProject('projeto1')">
+                <div class="card-image">
+                    <img src="/api/placeholder/400/320" alt="Imagem Projeto 1">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">E-commerce Responsivo</h3>
+                    <div class="card-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    <p class="card-description">Plataforma completa de e-commerce com carrinho de compras, página de produtos e sistema de pagamento integrado. Desenvolvido com foco em experiência do usuário.</p>
+                </div>
+            </div>
+
+            <!-- Projeto 2 -->
+            <div class="project-card" onclick="navigateToProject('projeto2')">
+                <div class="card-image">
+                    <img src="/api/placeholder/400/320" alt="Imagem Projeto 2">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">App de Gestão Financeira</h3>
+                    <div class="card-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">MongoDB</span>
+                    </div>
+                    <p class="card-description">Aplicativo web para controle de despesas pessoais, com gráficos interativos, alertas e categorização automática. Inclui sistema de metas financeiras e relatórios.</p>
+                </div>
+            </div>
+
+            <!-- Projeto 3 -->
+            <div class="project-card" onclick="navigateToProject('projeto3')">
+                <div class="card-image">
+                    <img src="/api/placeholder/400/320" alt="Imagem Projeto 3">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Site Institucional</h3>
+                    <div class="card-tags">
+                        <span class="tag">WordPress</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">SEO</span>
+                    </div>
+                    <p class="card-description">Website corporativo otimizado para SEO com blog integrado, formulários de contato e área de cliente. Design moderno e animações sutis para melhor engajamento.</p>
+                </div>
+            </div>
+
+            <!-- Projeto 4 -->
+            <div class="project-card" onclick="navigateToProject('projeto4')">
+                <div class="card-image">
+                    <img src="/api/placeholder/400/320" alt="Imagem Projeto 4">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">Dashboard Administrativo</h3>
+                    <div class="card-tags">
+                        <span class="tag">Vue.js</span>
+                        <span class="tag">Firebase</span>
+                        <span class="tag">Charts.js</span>
+                    </div>
+                    <p class="card-description">Painel administrativo com autenticação, controle de permissões, visualização de dados em tempo real e exportação de relatórios em múltiplos formatos.</p>
+                </div>
+            </div>
+
+            <!-- Projeto 5 -->
+            <div class="project-card" onclick="navigateToProject('projeto5')">
+                <div class="card-image">
+                    <img src="/api/placeholder/400/320" alt="Imagem Projeto 5">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">API RESTful</h3>
+                    <div class="card-tags">
+                        <span class="tag">Express</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">JWT</span>
+                    </div>
+                    <p class="card-description">API completa com autenticação JWT, validação de dados, documentação Swagger e testes automatizados. Implementa boas práticas de segurança e performance.</p>
+                </div>
+            </div>
+
+            <!-- Projeto 6 -->
+            <div class="project-card" onclick="navigateToProject('projeto6')">
+                <div class="card-image">
+                    <img src="/api/placeholder/400/320" alt="Imagem Projeto 6">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">App Mobile</h3>
+                    <div class="card-tags">
+                        <span class="tag">React Native</span>
+                        <span class="tag">Redux</span>
+                        <span class="tag">Firebase</span>
+                    </div>
+                    <p class="card-description">Aplicativo móvel cross-platform com funcionalidades offline, notificações push e integração com APIs de terceiros. Inclui navegação por gestos e animações fluidas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Meu Portfólio - Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        // Função para redirecionar para a página do projeto
+        function navigateToProject(projectId) {
+        }
+
+        // Adiciona hover dinâmico para dispositivos mobile (touch)
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.project-card');
+            
+            cards.forEach(card => {
+                card.addEventListener('touchstart', function() {
+                    // Remove a classe 'touch-hover' de todos os cards
+                    cards.forEach(c => c.classList.remove('touch-hover'));
+                    
+                    // Adiciona a classe 'touch-hover' ao card tocado
+                    this.classList.add('touch-hover');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
