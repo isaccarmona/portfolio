@@ -75,14 +75,14 @@ h1 {
 }
 
 .card-description {
-    color: #666;
+    color: #ff0000;
     line-height: 1.5;
     margin-top: 10px;
     overflow: visible;
     text-overflow: clip;
     display: block;
     height: auto;
-}    transition: transform 0.5s;
+}
 }
 
 .project-card:hover .card-image img {
